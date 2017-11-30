@@ -52,6 +52,8 @@ https://developers.webflow.com/#cms-api-reference
 
 An API key needs to be created and a collection ID determined before this works.
 
+Webflow only allows 100 entries to be downloaded at once, which is why there is a loop in place. This saves 100 entries to an array, 'offsets' by 100 (i.e. ignores the first 100 and downloads the next 100). This currently happens 5 times to download 500 entries, although this can be changed. Another constraint is that Webflow only allows you to make a certain number of calls per minute, so it may be necessary to do this multiple times over a prolonged period if the dataset is suitably large.
+
 ## Usage
 To install:
 

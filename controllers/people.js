@@ -33,7 +33,7 @@ exports.webflow_upload = function(req, res){
         // pushes promise to array
         resolvedPromiseArray.push(items);
 
-        // gets the an array of items, updates them to fit with the schema and then adds them to sessionArray
+        // gets the array of items, updates them to fit with the schema and then adds them to sessionArray
         items.then(function(i){
             var itemArray = i.items;
             // to put items into 'schema friendly' format

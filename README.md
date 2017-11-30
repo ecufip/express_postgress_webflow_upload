@@ -21,17 +21,17 @@ This created the following folders:
 - migrations, contains all migration files
 - seeders, contains all seed files
 
-Now this exists, it does not need to be done again.
+Now this exists, it does not need to be done again, provided the db exists and config file is correct.
 
 ### Creating a schema
 The schema was originally created using the following command:
 
         $ node_modules/.bin/sequelize model:generate --name People --attributes name:string
 
-This creates a table with the field: name. This also creates a migrations file which can be used to update the database.
+This creates a table with the field: name. This also creates a migrations file (under the migrations folder) which implements the schema changes to the database.
 
 ### Making changes to database
-To make changes to the database, including the creation of the table defined by the schema, a migration file must be created using:
+To make changes to the database a migration file must be created using:
 
         $ sequelize migration:create --name 'decide a name'
 

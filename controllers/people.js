@@ -42,12 +42,12 @@ exports.webflow_upload = function(req, res){
 
     // once all the promises in the resolvedPromiseArray have been resolved, creates item array and add all to database
     Promise.all(resolvedPromiseArray).then(function(){
-        return Promise.all(webflowObjectArray.map(function(item){
+        return webflowObjectArray.map(function(item){
             person = {
                 'name': item.name
             }
             return person
-        }));
+        });
     })
     .then(function(personArray){
         // takes array of Sequelize friendly objects and puts them into database

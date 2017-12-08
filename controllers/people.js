@@ -29,7 +29,7 @@ exports.webflow_upload = function(req, res){
     for(var x = 0; x<5; x++){
         
         // limit cannot exceed 100 but offset can be used to 'ignore' a number of results at the beginning
-        const items = webflow.items({ collectionId: 'TODO' }, { limit: 10, offset: x * 100});
+        const items = webflow.items({ collectionId: 'TODO' }, { limit: 100, offset: x * 100});
     
         // pushes promise to array
         resolvedPromiseArray.push(items);
